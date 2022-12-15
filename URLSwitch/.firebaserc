@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "urlshortner-8458d": {
+      "hosting": {
+        "URLSwitch": [
+          "urlshortner-8458d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "urlshortner-8458d"
+  }
+}

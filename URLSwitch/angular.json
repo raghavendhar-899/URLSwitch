@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "URLSwitch:build:production",
+            "firebaseProject": "urlshortner-8458d",
+            "firebaseHostingSite": "urlshortner-8458d"
+          }
         }
       }
     }
