@@ -15,11 +15,13 @@ import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FirebaseComponent } from './firebase/firebase.component';
+import { GenerateLinkComponent } from './generate-link/generate-link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirebaseComponent
+    FirebaseComponent,
+    GenerateLinkComponent
   ],
   imports: [
     BrowserModule,
