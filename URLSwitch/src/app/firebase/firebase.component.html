@@ -1,2 +1,29 @@
-<p>firebase works!</p>
-test
+<!-- <p>firebase works!</p>
+Favorite Color: <input type="text" [formControl]="favoriteColorControl" >
+
+Favorite Color: <input type="text" [(ngModel)]="favoriteColor"> -->
+
+<form class="mt-3" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <p>
+    <!-- <mat-form-field class="w-75" appearance="outline"> -->
+      <!-- <mat-label> -->
+        Enter links
+      <!-- </mat-label> -->
+      <input matInput type="text" formControlName="link" />
+      <!-- <mat-error *ngIf="signupForm.get('name')?.hasError('required')"> -->
+        <!-- Name is <strong>required</strong> -->
+      <!-- </mat-error>
+    </mat-form-field> -->
+  </p>
+
+
+
+  <button
+
+    color="primary"
+    type="submit"
+
+  >
+    Go
+  </button>
+</form>
