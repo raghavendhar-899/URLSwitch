@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./generate-link.component.css']
 })
 export class GenerateLinkComponent {
+  title = 'URLSwitch';
+  newUrl = "";
+  process = 0;
 
+  submitUrl() {
+    this.newUrl = "damn boy";
+    this.process = 1;
+  }
 }
