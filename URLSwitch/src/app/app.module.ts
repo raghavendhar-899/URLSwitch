@@ -17,6 +17,10 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FirebaseComponent } from './firebase/firebase.component';
 import { GenerateLinkComponent } from './generate-link/generate-link.component';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,10 @@ import { GenerateLinkComponent } from './generate-link/generate-link.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
