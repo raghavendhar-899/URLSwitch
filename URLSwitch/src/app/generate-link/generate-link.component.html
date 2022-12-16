@@ -7,13 +7,16 @@
 <div
     style="display: flex; align-items: center; justify-content: center; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <h3>INPUT YOUR LINK IN THE BUTTON BELOW</h3>
-    <input type="text" name="inputUrl" id="inputUrl" [value]='value' placeholder="https://www.youtube.com/"
-        style="width: 60%;">
+    <input type="text" name="inputUrl" id="inputUrl"  placeholder="https://www.youtube.com/"
+        style="width: 60%;" #inputUrl>
     <br>
-    <button (click)="submitUrl(value)">Shorten URL</button>
+    <!-- <div>sdhfgjsdf {{value}}</div> -->
+    <button (click)="submitUrl(inputUrl.value)">Shorten URL</button>
 </div>
+
 <div
     style="display: flex; align-items: center; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <h2 *ngIf="process == 1">Your short URL is:</h2>
     <h2 *ngIf="process == 1">{{newUrl}}</h2>
+    <!-- <h1 *ngIf="process == 1">{{inputUrl.value}}</h1> -->
 </div>

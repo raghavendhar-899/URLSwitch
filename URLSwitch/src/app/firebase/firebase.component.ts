@@ -38,6 +38,7 @@ export class FirebaseComponent {
 
   onSubmit(value: string) {
     // console.log('signupForm', this.signupForm.value);
+    // console.log('firebase onSubmit = ',value);
 
     this.httpClient.post("https://urlshortner-8458d-default-rtdb.firebaseio.com/links.json", JSON.parse('{"key":"' + value + '"}'))
       .subscribe
