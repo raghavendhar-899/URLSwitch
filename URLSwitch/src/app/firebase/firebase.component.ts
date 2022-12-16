@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { FormControl,UntypedFormGroup,Validators,
-  UntypedFormControl, } from '@angular/forms';
-  import { HttpClient } from '@angular/common/http';
+import { Component, Input } from '@angular/core';
+import {
+  FormControl, UntypedFormGroup, Validators,
+  UntypedFormControl,
+} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -12,11 +14,14 @@ import { FormControl,UntypedFormGroup,Validators,
 })
 
 export class FirebaseComponent {
+
+  @Input() inputValue: string | undefined;
+
   favoriteColorControl = new FormControl('');
 
 
 
-  favoriteColor='';
+  favoriteColor = '';
 
   signupForm: UntypedFormGroup = new UntypedFormGroup(
     {
@@ -29,25 +34,25 @@ export class FirebaseComponent {
 
     private httpClient: HttpClient,
 
-  ) {}
+  ) { }
 
-  onSubmit(){
-    console.log('signupForm', this.signupForm.value);
+  onSubmit(value: string) {
+    // console.log('signupForm', this.signupForm.value);
 
-    this.httpClient.post("https://urlshortner-8458d-default-rtdb.firebaseio.com/links.json",this.signupForm.value)
-    .subscribe
-    ((response) => {
-      console. log (response);
-      this.signupForm.reset();
-    }
-    );
+    this.httpClient.post("https://urlshortner-8458d-default-rtdb.firebaseio.com/links.json", JSON.parse('{"key":"' + value + '"}'))
+      .subscribe
+      ((response) => {
+        console.log(response);
+        this.signupForm.reset();
+      }
+      );
 
-    this.httpClient.get("https://urlshortner-8458d-default-rtdb.firebaseio.com/links.json")
-    .subscribe((data)=>{
-      console.log(data);
-    // this.searchData(data)
+    // this.httpClient.get("https://urlshortner-8458d-default-rtdb.firebaseio.com/links.json")
+    //   .subscribe((data) => {
+    //     console.log(data);
+    //     // this.searchData(data)
 
-    });
+    //   });
 
 
   }
