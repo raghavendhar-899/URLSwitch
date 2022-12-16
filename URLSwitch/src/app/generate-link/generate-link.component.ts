@@ -1,16 +1,32 @@
 import { Component } from '@angular/core';
+import { FirebaseComponent } from '../firebase/firebase.component';
+
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-generate-link',
   templateUrl: './generate-link.component.html',
   styleUrls: ['./generate-link.component.css']
 })
+
+
 export class GenerateLinkComponent {
   title = 'URLSwitch';
   newUrl = "";
   process = 0;
+  value = "";
 
-  submitUrl() {
+  constructor(
+
+    private httpClient: HttpClient,
+
+  ) { }
+
+  submitUrl(value: string) {
+    this.value = value;
+    let firebaseComponent = new FirebaseComponent(this.httpClient);
+    let inputUrl = value;
+    firebaseComponent.onSubmit(inputUrl);
     this.newUrl = "damn boy";
     this.process = 1;
   }
