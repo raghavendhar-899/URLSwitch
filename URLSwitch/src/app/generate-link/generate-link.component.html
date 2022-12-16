@@ -1,1 +1,18 @@
-<p>generate-link works!</p>
+<div
+    style="display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    <h2>WELCOME TO urlSwitch</h2>
+</div>
+
+<div
+    style="display: flex; align-items: center; justify-content: center; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h3>INPUT YOUR LINK IN THE BUTTON BELOW</h3>
+    <input type="text" name="inputUrl" id="inputUrl" placeholder="https://www.youtube.com/" style="width: 60%;">
+    <br>
+    <button (click)="submitUrl()">Shorten URL</button>
+</div>
+<div
+    style="display: flex; align-items: center; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 *ngIf="process == 1">Your short URL is:</h2>
+    <h2 *ngIf="process == 1">{{newUrl}}</h2>
+</div>
