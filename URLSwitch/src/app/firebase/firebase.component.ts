@@ -58,6 +58,13 @@ export class FirebaseComponent {
 
   }
 
+  getData() {
+    this.httpClient.get("https://urlshortner-8458d-default-rtdb.firebaseio.com/links.json")
+      .subscribe((data) => {
+        console.log(data);
+      });
+  }
+
   // searchData(data){
   //   <Item[]> JSON.parse(data);
   // }

@@ -15,7 +15,7 @@ export class GenerateLinkComponent {
   newUrl = "";
   process = 0;
   value = "";
-  inputUrl='';
+  inputUrl = '';
   constructor(
 
     private httpClient: HttpClient,
@@ -26,8 +26,9 @@ export class GenerateLinkComponent {
     this.value = value;
     let firebaseComponent = new FirebaseComponent(this.httpClient);
     let inputUrl = value;
-    // console.log('gen link submit url ',value);
+    console.log('gen link submit url ', value);
     firebaseComponent.onSubmit(inputUrl);
+    //firebaseComponent.getData();
     this.newUrl = "damn boy";
     this.process = 1;
   }
